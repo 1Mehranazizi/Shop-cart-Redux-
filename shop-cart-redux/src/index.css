@@ -9,3 +9,13 @@ body {
   background-color: #f9f9f9;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.shop-page {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+}

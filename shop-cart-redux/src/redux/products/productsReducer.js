@@ -14,12 +14,12 @@ export const productsReducer = (state = initialState, action) => {
     case "FETCH_PRODUCTS_SUCCESS":
       return {
         loading: false,
-        products: payload,
+        products: action.payload,
       };
     case "FETCH_PRODUCTS_FAILURE":
       return {
         loading: false,
-        error: payload,
+        error: action.payload,
       };
     default:
       return state;
