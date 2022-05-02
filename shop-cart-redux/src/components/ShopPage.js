@@ -12,10 +12,8 @@ const ShopPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    if (!productsState.products.length) dispatch(fetchProducts());
   }, []);
-
-  console.log(productsState.products);
 
   return (
     <div className="container">
