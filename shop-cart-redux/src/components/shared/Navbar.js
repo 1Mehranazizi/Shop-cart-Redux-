@@ -9,19 +9,21 @@ import shopping from "../../assets/image/shop.svg";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const state = useSelector(state => state.cartState);
-  
+  const state = useSelector((state) => state.cartState);
+
   return (
     <div className={styles.navbar}>
-      <div className={styles.container}>
-        <Link to="/products" className={styles.link}>
-          Products
-        </Link>
-        <div className={styles.rightnavbar}>
-          <Link to="/cart">
-            <img src={shopping} alt="shop" />
+      <div className="container">
+        <div className={styles.nav}>
+          <Link to="/products" className={styles.link}>
+            Products
           </Link>
-          <span>{state.itemCounter}</span>
+          <div className={styles.rightnavbar}>
+            <Link to="/cart">
+              <img src={shopping} alt="shop" />
+            </Link>
+            <span>{state.itemCounter}</span>
+          </div>
         </div>
       </div>
     </div>

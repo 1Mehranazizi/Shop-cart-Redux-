@@ -41,7 +41,7 @@ const ProductCard = ({ data }) => {
             <button
               className={styles.lettelbtn}
               onClick={() =>
-                dispatch(dispatch(decrease(data)))
+                dispatch(decrease(data))
               }
             >
               -
@@ -55,7 +55,7 @@ const ProductCard = ({ data }) => {
           {isInCart(state, data.id) ? (
             <button
               onClick={() =>
-                dispatch(dispatch(increase(data)))
+                dispatch(increase((data)))
               }
               className={styles.lettelbtn}
             >
@@ -64,7 +64,7 @@ const ProductCard = ({ data }) => {
           ) : (
             <button
               onClick={() =>
-                dispatch(dispatch(addItem(data)))
+                dispatch(addItem(data))
               }
               className={styles.additem}
             >

@@ -1,21 +1,22 @@
 import React from "react";
-import {useSelector} from "react-redux";
-import {Link, useParams} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 
 //styles
 import styles from "./ProductsDetails.module.css";
 
 const ProductsDetails = () => {
-  const params = useParams()
-  const id =params.id;
-  const data = useSelector(state => state.productsState.products);
+  const params = useParams();
+  const id = params.id;
+  const data = useSelector((state) => state.productsState.products);
   const product = data[id - 1];
-  const {price , title , image , description , category} = product;
+  const { price, title, image, description, category } = product;
 
   return (
-    <div className={styles.details}>
-      <img src={image} alt="product" className={styles.leftdetails} />
-      <div className={styles.rightdetails}>
+    <div className="container">
+      <div className={styles.details}>
+        <img src={image} alt="product" className={styles.leftdetails} />
+        <div className={styles.rightdetails}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.description}>{description}</p>
           <div className={styles.footerdetails}>
@@ -23,6 +24,7 @@ const ProductsDetails = () => {
             <span>{price} $</span>
           </div>
           <Link to="/products">Go to products</Link>
+        </div>
       </div>
     </div>
   );

@@ -4,12 +4,10 @@
     box-shadow: 0 5px 30px rgba(120, 120, 120, .15);
 }
 
-.container {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
-    margin: 0 auto;
 }
 
 .link {
