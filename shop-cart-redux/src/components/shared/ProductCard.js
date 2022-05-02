@@ -1,13 +1,24 @@
 import React from "react";
+import { useSelector , useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 //Styles
 import styles from "./ProductCard.module.css";
 
 //Functioins
-import { shortanWord } from "../../helper/function";
+import { shortanWord , isInCart , quantityItem } from "../../helper/function";
+
+//Redux Actions
+import { addItem , removeItem , increase , decrease } from "../../redux/cart/cartAction";
+
+//Icon
+import trash from "../../assets/image/trash.svg"
 
 const ProductCard = ({ data }) => {
+
+  const state = useSelector(state => state.cartState);
+  const dispatch = useDispatch()
+
   return (
     <div className={styles.product}>
       <img src={data.image} alt="product" className={styles.image} />
@@ -16,35 +27,35 @@ const ProductCard = ({ data }) => {
       <div className={styles.cardfooter}>
         <Link to={`/products/${data.id}`}>details</Link>
         <div className={styles.cardbutton}>
-          {/* {quantityItem(state, productsData.id) === 1 && (
+          {quantityItem(state, data.id) === 1 && (
             <button
               onClick={() =>
-                dispatch({ type: "REMOVE_ITEM", payload: productsData })
+                dispatch(dispatch(removeItem(data)))
               }
               className={styles.lettelbtn}
             >
               <img src={trash} alt="trash" style={{ width: "20px" }} />
             </button>
           )}
-          {quantityItem(state, productsData.id) > 1 && (
+          {quantityItem(state, data.id) > 1 && (
             <button
               className={styles.lettelbtn}
               onClick={() =>
-                dispatch({ type: "DECREASE", payload: productsData })
+                dispatch(dispatch(decrease(data)))
               }
             >
               -
             </button>
           )}
-          {quantityItem(state, productsData.id) > 0 && (
+          {quantityItem(state, data.id) > 0 && (
             <span className={styles.quantity}>
-              {quantityItem(state, productsData.id)}
+              {quantityItem(state, data.id)}
             </span>
           )}
-          {isInCart(state, productsData.id) ? (
+          {isInCart(state, data.id) ? (
             <button
               onClick={() =>
-                dispatch({ type: "INCREASE", payload: productsData })
+                dispatch(dispatch(increase(data)))
               }
               className={styles.lettelbtn}
             >
@@ -53,13 +64,13 @@ const ProductCard = ({ data }) => {
           ) : (
             <button
               onClick={() =>
-                dispatch({ type: "ADD_ITEM", payload: productsData })
+                dispatch(dispatch(addItem(data)))
               }
               className={styles.additem}
             >
               Add to cart
             </button>
-          )} */}
+          )}
         </div>
       </div>
     </div>
