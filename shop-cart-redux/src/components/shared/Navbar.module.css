@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 5px 30px rgba(120, 120, 120, .15);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.link {
+    color: #372bd8;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.rightnavbar {
+    position: relative;
+}
+
+.rightnavbar img {
+    width: 22px;
+}
+
+.rightnavbar span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #372bd8;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+    color: #fff;
+    top: -5px;
+    right: -10px;
+}
