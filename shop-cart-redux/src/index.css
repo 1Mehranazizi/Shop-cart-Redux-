@@ -20,3 +20,44 @@ body {
   gap: 2rem;
   margin-top: 3rem;
 }
+
+@media(max-width:990px) {
+  .container {
+    width: auto;
+    padding: 0 2rem;
+  }
+
+  .shop-page {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media(max-width:768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .shop-page {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:560px) {
+  .container {
+    padding: 0 .6rem;
+  }
+
+  .shop-page {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+

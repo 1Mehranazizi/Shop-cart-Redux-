@@ -37,3 +37,13 @@
     padding: 4px 12px;
     border-radius: 3px;
 }
+
+@media(max-width:768px) {
+    .details {
+        flex-direction: column;
+    }
+
+    .leftdetails {
+        width: 200px;
+    }
+}

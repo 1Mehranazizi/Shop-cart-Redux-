@@ -6,6 +6,7 @@ import { fetchProducts } from "../redux/products/productsAction";
 
 //Components
 import ProductCard from "./shared/ProductCard";
+import Loader from "./shared/Loader";
 
 const ShopPage = () => {
   const productsState = useSelector((state) => state.productsState);
@@ -17,9 +18,9 @@ const ShopPage = () => {
 
   return (
     <div className="container">
-      <div className="shop-page">
+      <div className={!productsState.loading ? "shop-page" : ""}>
         {productsState.loading ? (
-          <h2>Loading ...</h2>
+          <Loader />
         ) : productsState.error ? (
           <h2>Warning</h2>
         ) : (
